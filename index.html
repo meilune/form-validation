@@ -15,27 +15,32 @@
             <!-- Full Name -->
             <div class="form-group">
                 <label for="name">Full Name</label>
-                <input type="text" id="name" placeholder="Full Name">
+                <input type="text" id="name" placeholder="Full Name"
+                        required minlength="3" maxlength="100">
             </div>
             <!-- Phone Number -->
             <div class="form-group">
                 <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" placeholder="5555 555 555">
+                <input type="tel" id="phone" placeholder="5555 555 555"
+                        required pattern="^[0-9-+\s()]*$" minlength="6" maxlength="28">
             </div>
             <!-- Email -->
             <div class="form-group">
                 <label for="email">Email Address</label>
-                <input type="email" id="email" placeholder="email@address.com">
+                <input type="email" id="email" placeholder="email@address.com"
+                        required>
             </div>
             <!-- Website URL -->
             <div class="form-group">
                 <label for="website">Website Address</label>
-                <input type="url" id="website" placeholder="https://luaru.com.au">
+                <input type="url" id="website" placeholder="https://luaru.com.au"
+                        required>
             </div>
             <!-- Password -->
             <div class="form-group">
                 <label for="password1">Password</label>
-                <input type="password" id="password1" placeholder="Create Password">
+                <input type="password" id="password1" placeholder="Create Password"
+                        required>
             </div>
             <!-- Confirm Password -->
             <div class="form-group">
