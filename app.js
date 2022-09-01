@@ -5,13 +5,40 @@ const messageContainer = document.querySelector(".message-container");
 const message = document.getElementById("message");4
 
 let isValid = false;
+let passwordsMatch = false;
+
 function validateForm() {
     //Using Constraint API
     isValid = form.checkValidity();
-    //Style main message for an error
-    message.textContent = "Please fill out all fields.";
-    message.style.color = "#A62F03";
-    messageContainer.style.borderColor = "#A62F03";
+    if (!isValid) {
+        //Style main message for an error
+        message.textContent = "Please fill out all fields.";
+        message.style.color = "#A62F03";
+        messageContainer.style.borderColor = "#A62F03";
+        return;
+    } 
+    //Checking if passwords match
+    if (password1El.value === password2El.value) {
+        passwordsMatch = true;
+        password1El.style.borderColor = "#048C73";
+        password2El.style.borderColor = "#048C73";
+    } else {
+        passwordsMatch = false;
+        message.textContent = 'Make sure passwords match!'
+        message.style.color = "#A62F03";
+        messageContainer.style.borderColor = "#A62F03";
+        password1El.style.borderColor = "#A62F03";
+        password2El.style.borderColor = "#A62F03";
+        return;
+    }
+    //If everything is successful we get the success message
+    if(isValid && passwordsMatch) {
+        //Style main message for correct outcome
+        message.textContent = "Successfully registered!";
+        message.style.color = "#048C73";
+        messageContainer.style.borderColor = "#048C73";
+    }
+
 }
 
 function processFormData(e) {
