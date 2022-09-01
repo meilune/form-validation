@@ -1,6 +1,6 @@
 # form-validation
 
-Form Validation practice.
+Form Validation practice. Check out how it works here: https://meilune.github.io/form-validation/ 
 
 Beautiful CSS and other ideas:
 https://getcssscan.com/css-box-shadow-examples
