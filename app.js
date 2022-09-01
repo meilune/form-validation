@@ -34,17 +34,34 @@ function validateForm() {
     //If everything is successful we get the success message
     if(isValid && passwordsMatch) {
         //Style main message for correct outcome
-        message.textContent = "Successfully registered!";
+        message.textContent = "Successfully console.log'ed! :)";
         message.style.color = "#048C73";
         messageContainer.style.borderColor = "#048C73";
     }
+}
 
+//Store the data from the form
+function storeFormData() {
+    //Get the values from the inputs with specifically named values
+    const user = {
+        name: form.name.value,
+        phone: form.phone.value,
+        email: form.email.value,
+        website: form.website.value,
+        password: form.password.value
+    }
+    //Do something with user data
+    console.log(user);
 }
 
 function processFormData(e) {
     e.preventDefault();
     //Validate Form
     validateForm();
+    //Submit data if Valid 
+    if (isValid && passwordsMatch) {
+        storeFormData();
+    }
 }
 
 //Event Listener
